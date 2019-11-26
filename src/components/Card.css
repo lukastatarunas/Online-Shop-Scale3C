@@ -1,0 +1,25 @@
+.Card {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background: #fff;
+}
+
+h2 {
+    margin-top: 10px;
+}
+
+p {
+    margin: 10px 0 20px 0;
+}
+
+button {
+    cursor: pointer;
+    color: #fff;
+    background: #28A745;
+    outline: none;
+    border: none;
+    height: 25px;
+    border-radius: 10px;
+    margin-left: 10px;
+}
