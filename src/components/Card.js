@@ -3,22 +3,29 @@ import React, { Component } from 'react'
 import './Card.css'
 
 class Card extends Component {
-    constructor(props) {
-        super(props)
+
+    constructor() {
+        super()
         this.state = {
-            itemAmount: 0
+            disableAddButton: true
         }
     }
 
     getItemAmount = e => {
-        this.setState({ itemAmount: e.target.value })
+        this.props.enterItemAmount(Number(e.target.value))
+        this.setState({ disableAddButton: false })
     }
 
     addItem = () => {
-        console.log(this.props.id)
+        this.props.addItem(this.props.id)
+        this.setState({ disableAddButton: true })
+        console.log(this.props.amount[this.props.amount.length - 1])
     }
 
     render() {
+        const disableAddButton = {
+            pointerEvents: "none"
+        }
         return (
             <div className="Card">
                 <img src={`https://robohash.org/${ this.props.id }`} alt="shopping-item" />
@@ -27,8 +34,14 @@ class Card extends Component {
                     <p>Home Robot</p>
                 </div>
                 <div>
-                    <input onChange={ this.getItemAmount } placeholder="Enter Amount" />
-                    <button onClick={ this.addItem }>Add item</button>
+                    <select onChange={ this.getItemAmount }>
+                        <option></option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                    <button style={ this.state.disableAddButton ? disableAddButton : null } className="add-button" onClick={ this.addItem }>Add item</button>
                 </div>
             </div>
         )

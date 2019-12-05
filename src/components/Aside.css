@@ -6,3 +6,27 @@
     border-radius: 10px;
     background: #fff;
 }
+
+li {
+    list-style: none;
+}
+
+.delete-button {
+    cursor: pointer;
+    color: #fff;
+    background: #DC3545;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.checkout-button {
+    cursor: pointer;
+    color: #fff;
+    background: #343A40;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+}
